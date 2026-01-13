@@ -47,7 +47,8 @@ Each file must include:
 1. Fork the repo
 2. Add or edit a file under `data/<vendor>/`
 3. Include at least one source URL
-4. Run validation (if available)
+4. Run validation (`bun run validate`)
+5. (Optional) Install git hooks by running `bun install` (Lefthook runs via `prepare`)
 5. Open a pull request
 
 All submissions are validated in CI.
