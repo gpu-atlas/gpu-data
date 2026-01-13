@@ -1,10 +1,12 @@
-# data/rtx-4090.toml
+# data/nvidia/rtx-4090.toml
 
 model = "RTX 4090"
 vendor = "NVIDIA"
 architecture = "Ada Lovelace"
 series = 40
 segment = "desktop"
+
+released = true
 
 vram_gb = 24
 vram_type = "GDDR6X"

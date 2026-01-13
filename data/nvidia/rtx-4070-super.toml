@@ -1,0 +1,31 @@
+# data/nvidia/rtx-4070-super.toml
+
+model = "RTX 4070 Super"
+vendor = "NVIDIA"
+architecture = "Ada Lovelace"
+series = 40
+segment = "desktop"
+
+released = true
+
+vram_gb = 12
+vram_type = "GDDR6X"
+memory_bus_bits = 192
+memory_bandwidth_gbps = 504.2
+
+cuda_cores = 7168
+tensor_cores = 224
+rt_cores = 56
+sms = 56
+rops = 80
+
+base_clock_mhz = 1980
+boost_clock_mhz = 2475
+tdp_watts = 220
+
+release = "2024-01"
+
+sources = [
+    "https://www.nvidia.com/en-me/geforce/graphics-cards/40-series/rtx-4070-family/",
+    "https://www.techpowerup.com/gpu-specs/geforce-rtx-4070-super.c4186"
+]

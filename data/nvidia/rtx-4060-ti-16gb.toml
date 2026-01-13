@@ -1,0 +1,31 @@
+# data/nvidia/rtx-4060-ti-16gb.toml
+
+model = "RTX 4060 Ti 16 GB"
+vendor = "NVIDIA"
+architecture = "Ada Lovelace"
+series = 40
+segment = "desktop"
+
+released = true
+
+vram_gb = 16
+vram_type = "GDDR6"
+memory_bus_bits = 128
+memory_bandwidth_gbps = 288.0
+
+cuda_cores = 4352
+tensor_cores = 136
+rt_cores = 34
+sms = 34
+rops = 48
+
+base_clock_mhz = 2310
+boost_clock_mhz = 2535
+tdp_watts = 165
+
+release = "2023-05"
+
+sources = [
+    "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/",
+    "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060-ti-16-gb.c4155"
+]

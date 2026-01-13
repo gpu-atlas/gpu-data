@@ -1,0 +1,31 @@
+# data/nvidia/rtx-4080-super.toml
+
+model = "RTX 4080 Super"
+vendor = "NVIDIA"
+architecture = "Ada Lovelace"
+series = 40
+segment = "desktop"
+
+released = true
+
+vram_gb = 16
+vram_type = "GDDR6X"
+memory_bus_bits = 256
+memory_bandwidth_gbps = 736.3
+
+cuda_cores = 10240
+tensor_cores = 320
+rt_cores = 80
+sms = 80
+rops = 112
+
+base_clock_mhz = 2295
+boost_clock_mhz = 2550
+tdp_watts = 320
+
+release = "2024-01"
+
+sources = [
+    "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4080-family/",
+    "https://www.techpowerup.com/gpu-specs/geforce-rtx-4080-super.c4182"
+]
