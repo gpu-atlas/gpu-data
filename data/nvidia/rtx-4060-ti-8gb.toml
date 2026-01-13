@@ -1,4 +1,4 @@
-# data/rtx-4060-ti-8gb.toml
+# data/nvidia/rtx-4060-ti-8gb.toml
 
 model = "RTX 4060 Ti 8 GB"
 vendor = "NVIDIA"

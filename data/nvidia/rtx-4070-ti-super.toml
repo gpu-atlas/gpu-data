@@ -1,4 +1,4 @@
-# data/rtx-4070-ti-super.toml
+# data/nvidia/rtx-4070-ti-super.toml
 
 model = "RTX 4070 Ti Super"
 vendor = "NVIDIA"

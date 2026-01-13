@@ -1,4 +1,4 @@
-# data/rtx-4090.toml
+# data/nvidia/rtx-4090.toml
 
 model = "RTX 4090"
 vendor = "NVIDIA"
