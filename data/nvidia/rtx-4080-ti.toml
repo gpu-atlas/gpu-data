@@ -1,0 +1,30 @@
+# data/nvidia/rtx-4080-ti.toml
+
+model = "RTX 4080 Ti"
+vendor = "NVIDIA"
+architecture = "Ada Lovelace"
+series = 40
+segment = "desktop"
+
+released = false
+
+vram_gb = 16
+vram_type = "GDDR6X"
+memory_bus_bits = 256
+memory_bandwidth_gbps = 678.4
+
+cuda_cores = 14080
+tensor_cores = 440
+rt_cores = 110
+sms = 110
+rops = 144
+
+base_clock_mhz = 2340
+boost_clock_mhz = 2610
+tdp_watts = 400
+
+release = "TBD"
+
+sources = [
+    "https://www.techpowerup.com/gpu-specs/geforce-rtx-4080-ti.c3887"
+]

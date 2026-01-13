@@ -6,6 +6,8 @@ architecture = "Ada Lovelace"
 series = 40
 segment = "desktop"
 
+released = true
+
 vram_gb = 16
 vram_type = "GDDR6"
 memory_bus_bits = 128

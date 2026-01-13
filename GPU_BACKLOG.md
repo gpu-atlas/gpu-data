@@ -13,7 +13,7 @@ This list captures every GPU shown in the reference chart. Items are grouped by 
 - [RTX 4090](data/nvidia/rtx-4090.toml)
 - [RTX 4080 Super](data/nvidia/rtx-4080-super.toml)
 - [RTX 4080](data/nvidia/rtx-4080.toml)
-- RTX 4080 Ti (no data file yet)
+- [RTX 4080 Ti](data/nvidia/rtx-4080-ti.toml)
 - [RTX 4070 Ti Super](data/nvidia/rtx-4070-ti-super.toml)
 - [RTX 4070 Ti](data/nvidia/rtx-4070-ti.toml)
 - [RTX 4070 Super](data/nvidia/rtx-4070-super.toml)

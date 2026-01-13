@@ -10,6 +10,7 @@ const REQUIRED_FIELDS = new Set([
     'architecture',
     'series',
     'segment',
+    'released',
     'vram_gb',
     'vram_type',
     'memory_bus_bits',
@@ -72,6 +73,12 @@ function expectString(value: unknown, label: string) {
     }
 }
 
+function expectBoolean(value: unknown, label: string) {
+    if (typeof value !== 'boolean') {
+        fail(`${label} must be a boolean.`);
+    }
+}
+
 async function main() {
     let found = 0;
     for await (const file of walk(DATA_DIR)) {
@@ -121,6 +128,7 @@ async function main() {
         if (!ALLOWED_SEGMENTS.has(data.segment as string)) {
             fail(`${rel} segment must be one of: ${Array.from(ALLOWED_SEGMENTS).join(', ')}.`);
         }
+        expectBoolean(data.released, `${rel}: released`);
 
         expectNumber(data.vram_gb, `${rel}: vram_gb`, true);
         expectString(data.vram_type, `${rel}: vram_type`);
@@ -138,8 +146,14 @@ async function main() {
         expectNumber(data.tdp_watts, `${rel}: tdp_watts`, true);
 
         expectString(data.release, `${rel}: release`);
-        if (!RELEASE_RE.test(data.release as string)) {
-            fail(`${rel} release must be YYYY-MM.`);
+        if (data.released === true) {
+            if (!RELEASE_RE.test(data.release as string)) {
+                fail(`${rel} release must be YYYY-MM for released GPUs.`);
+            }
+        } else {
+            if ((data.release as string) !== 'TBD') {
+                fail(`${rel} release must be "TBD" when released is false.`);
+            }
         }
 
         if (!Array.isArray(data.sources) || data.sources.length === 0) {
