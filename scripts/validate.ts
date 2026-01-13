@@ -159,6 +159,11 @@ async function main() {
             if (!RELEASE_RE.test(data.release as string)) {
                 fail(`${rel} release must be YYYY-MM for released GPUs.`);
             }
+            const [, monthStr] = (data.release as string).split('-');
+            const month = Number.parseInt(monthStr ?? '', 10);
+            if (!Number.isInteger(month) || month < 1 || month > 12) {
+                fail(`${rel} release must be YYYY-MM.`);
+            }
         } else {
             if ((data.release as string) !== 'TBD') {
                 fail(`${rel} release must be "TBD" when released is false.`);

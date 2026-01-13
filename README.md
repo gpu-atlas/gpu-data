@@ -49,7 +49,7 @@ Each file must include:
 3. Include at least one source URL
 4. Run validation (`bun run validate`)
 5. (Optional) Install git hooks by running `bun install` (Lefthook runs via `prepare`)
-5. Open a pull request
+6. Open a pull request
 
 All submissions are validated in CI.
 
