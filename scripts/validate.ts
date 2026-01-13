@@ -15,11 +15,6 @@ const REQUIRED_FIELDS = new Set([
     'vram_type',
     'memory_bus_bits',
     'memory_bandwidth_gbps',
-    'cuda_cores',
-    'tensor_cores',
-    'rt_cores',
-    'sms',
-    'rops',
     'base_clock_mhz',
     'boost_clock_mhz',
     'tdp_watts',
@@ -79,6 +74,16 @@ function expectBoolean(value: unknown, label: string) {
     }
 }
 
+function validateVendorSpecificSpecs(data: Record<string, unknown>, vendor: string, rel: string) {
+    if (vendor === 'NVIDIA') {
+        expectNumber(data.cuda_cores, `${rel}: cuda_cores`, true);
+        expectNumber(data.tensor_cores, `${rel}: tensor_cores`, true);
+        expectNumber(data.rt_cores, `${rel}: rt_cores`, true);
+        expectNumber(data.sms, `${rel}: sms`, true);
+        expectNumber(data.rops, `${rel}: rops`, true);
+    }
+}
+
 async function main() {
     let found = 0;
     for await (const file of walk(DATA_DIR)) {
@@ -111,8 +116,16 @@ async function main() {
                 fail(`${rel} missing required field: ${key}`);
             }
         }
+        const allowedFields = new Set(REQUIRED_FIELDS);
+        if (data.vendor === 'NVIDIA') {
+            allowedFields.add('cuda_cores');
+            allowedFields.add('tensor_cores');
+            allowedFields.add('rt_cores');
+            allowedFields.add('sms');
+            allowedFields.add('rops');
+        }
         for (const key of keys) {
-            if (!REQUIRED_FIELDS.has(key)) {
+            if (!allowedFields.has(key)) {
                 fail(`${rel} has unexpected field: ${key}`);
             }
         }
@@ -135,11 +148,7 @@ async function main() {
         expectNumber(data.memory_bus_bits, `${rel}: memory_bus_bits`, true);
         expectNumber(data.memory_bandwidth_gbps, `${rel}: memory_bandwidth_gbps`, false);
 
-        expectNumber(data.cuda_cores, `${rel}: cuda_cores`, true);
-        expectNumber(data.tensor_cores, `${rel}: tensor_cores`, true);
-        expectNumber(data.rt_cores, `${rel}: rt_cores`, true);
-        expectNumber(data.sms, `${rel}: sms`, true);
-        expectNumber(data.rops, `${rel}: rops`, true);
+        validateVendorSpecificSpecs(data, data.vendor as string, rel);
 
         expectNumber(data.base_clock_mhz, `${rel}: base_clock_mhz`, true);
         expectNumber(data.boost_clock_mhz, `${rel}: boost_clock_mhz`, true);
