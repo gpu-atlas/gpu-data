@@ -1,0 +1,29 @@
+# data/rtx-4060.toml
+
+model = "RTX 4060"
+vendor = "NVIDIA"
+architecture = "Ada Lovelace"
+series = 40
+segment = "desktop"
+
+vram_gb = 8
+vram_type = "GDDR6"
+memory_bus_bits = 128
+memory_bandwidth_gbps = 272.0
+
+cuda_cores = 3072
+tensor_cores = 96
+rt_cores = 24
+sms = 24
+rops = 48
+
+base_clock_mhz = 1830
+boost_clock_mhz = 2460
+tdp_watts = 115
+
+release = "2023-05"
+
+sources = [
+    "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/",
+    "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060.c4107"
+]

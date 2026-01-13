@@ -1,0 +1,29 @@
+# data/rtx-4080.toml
+
+model = "RTX 4080"
+vendor = "NVIDIA"
+architecture = "Ada Lovelace"
+series = 40
+segment = "desktop"
+
+vram_gb = 16
+vram_type = "GDDR6X"
+memory_bus_bits = 256
+memory_bandwidth_gbps = 716.8
+
+cuda_cores = 9728
+tensor_cores = 304
+rt_cores = 76
+sms = 76
+rops = 112
+
+base_clock_mhz = 2205
+boost_clock_mhz = 2505
+tdp_watts = 320
+
+release = "2022-09"
+
+sources = [
+    "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4080-family/",
+    "https://www.techpowerup.com/gpu-specs/geforce-rtx-4080.c3888"
+]

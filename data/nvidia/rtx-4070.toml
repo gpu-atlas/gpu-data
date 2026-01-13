@@ -1,0 +1,29 @@
+# data/rtx-4070.toml
+
+model = "RTX 4070"
+vendor = "NVIDIA"
+architecture = "Ada Lovelace"
+series = 40
+segment = "desktop"
+
+vram_gb = 12
+vram_type = "GDDR6X"
+memory_bus_bits = 192
+memory_bandwidth_gbps = 504.2
+
+cuda_cores = 5888
+tensor_cores = 184
+rt_cores = 46
+sms = 46
+rops = 64
+
+base_clock_mhz = 1920
+boost_clock_mhz = 2475
+tdp_watts = 200
+
+release = "2023-04"
+
+sources = [
+    "https://www.nvidia.com/en-me/geforce/graphics-cards/40-series/rtx-4070-family/",
+    "https://www.techpowerup.com/gpu-specs/geforce-rtx-4070.c3924"
+]
